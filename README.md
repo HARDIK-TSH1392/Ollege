@@ -59,7 +59,7 @@ npm test
 ```
 
 ## Built With- MERN Stack
-*[React](https://react.dev/) - Frontend Framework
-*[Express](https://expressjs.com/) - Web framwork
-*[MongoDB](https://www.mongodb.com/) - Database Management
+* [React](https://react.dev/) - Frontend Framework
+* [Express](https://expressjs.com/) - Web framwork
+* [MongoDB](https://www.mongodb.com/) - Database Management
 
