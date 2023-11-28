@@ -1,3 +1,26 @@
+<h1 align="center">
+            ✨ Welcome to Ollege✨
+</h1>
+
+![Badge](https://img.shields.io/badge/Tech_Stack-MERN-yellow) ![Badge](https://img.shields.io/badge/Version-1.2-green) ![Badge](https://img.shields.io/badge/Type-OpenSource-orange) ![Badge](https://img.shields.io/badge/For-Students-red) 
+
+</div>
+
+<br />
+<img width="1469" alt="" src="./HomePageImage.png">
+
+## Tech Stack : <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/> <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white"/> <img src="https://img.shields.io/badge/react%20-%2314354C.svg?&style=for-the-badge&logo=react&logoColor=white"/> <img src="https://img.shields.io/badge/express%20-%23E34F26.svg?&style=for-the-badge&logo=express&logoColor=white"/> <img src="https://img.shields.io/badge/mongo%20-%231572B6.svg?&style=for-the-badge&logo=mongodb&logoColor=green"/> <img src="https://img.shields.io/badge/nodejs%20-%2314354C.svg?&style=for-the-badge&logo=nodejs&logoColor=white"/> <img src="https://img.shields.io/badge/markdown-%23000000.svg?&style=for-the-badge&logo=markdown&logoColor=white"/> <img src="https://img.shields.io/badge/github%20-%23121011.svg?&style=for-the-badge&logo=github&logoColor=white"/> <img src="https://img.shields.io/badge/git%20-%23121011.svg?&style=for-the-badge&logo=git&logoColor=green"/> 
+
+- **Frontend:** React
+- **Backend:** Nodejs, express, MongoDB
+- **Version Control:** Git and GitHub
+- **Hosting:** gh-pages(frontend), heroku(backend)
+- **Code Editor and tools**: VS Code
+
+ <br />
+
+ </p>
+
 # Ollege
 This is an in progress project which target the need of college students which is to be able to make better judgements while choosing electives. Usually before opting for a course they try to find people who have taken the course before. This project offeres the following thing:
 - You can give reviews to a course that exists in your college.
