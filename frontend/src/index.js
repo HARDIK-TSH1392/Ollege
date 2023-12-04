@@ -7,8 +7,9 @@ import Home from './pages/home'
 import Creators from './pages/creators';
 import About from './pages/about'
 import Courses from './pages/courses';
-import Course_Page,{ loader as courseloader } from './pages/course_page';
+import CoursePage,{ loader as courseloader } from './pages/course_page';
 import Login from './pages/login'
+import Signup from './pages/signup'
 
 const router = createBrowserRouter([
     {
@@ -33,12 +34,17 @@ const router = createBrowserRouter([
     },
     {
         path: "/courses/:courseCode",
-        element: <Course_Page />,
+        element: <CoursePage />,
         loader: courseloader,
     },
     {   
         path:"/login",
         element:<Login />
+
+    },
+    {   
+        path:"/signup",
+        element:<Signup />
 
     }
 

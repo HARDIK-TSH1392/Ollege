@@ -1,5 +1,5 @@
 const User = require('../models/User');
-const { body, validationResult } = require('express-validator');
+const { validationResult } = require('express-validator');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -8,15 +8,16 @@ const JWT_SECRET = 'Thisis@Secret';
 
 // Route handler for user registration
 exports.createUser = async (req, res) => {
+    let success = false;
     try {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
-            return res.status(400).json({ errors: errors.array() });
+            return res.status(400).json({ success, errors: errors.array() });
         }
 
         const existingUser = await User.findOne({ email: req.body.email });
         if (existingUser) {
-            return res.status(400).json({ error: "A user with this email already exists" });
+            return res.status(400).json({ success, error: "A user with this email already exists" });
         }
 
         const salt = await bcrypt.genSalt(10);
@@ -37,8 +38,8 @@ exports.createUser = async (req, res) => {
         };
 
         const authToken = jwt.sign(data, JWT_SECRET);
-
-        res.status(200).json({ authToken });
+        success = true;
+        res.status(200).json({ success, authToken });
     } catch (error) {
         console.error(error.message);
         res.status(500).send("Internal Server Error");
@@ -47,8 +48,9 @@ exports.createUser = async (req, res) => {
 
 // Route handler for user login
 exports.login = async (req, res) => {
+    let success = false
     // If there are errors, return Bad request and the errors
-    const errors = validationResult(req);
+    let errors = validationResult(req);
     if (!errors.isEmpty()) {
         return res.status(400).json({ errors: [{ param: "email", msg: "Please try to login with correct credentials" }] });
 
@@ -60,12 +62,14 @@ exports.login = async (req, res) => {
     try {
         let user = await User.findOne({ email });
         if (!user) {
+            success = false
             return res.status(400).json({ error: "Please try to login with correct credentials" });
         }
 
         const passwordCompare = await bcrypt.compare(password, user.password);
         if (!passwordCompare) {
-            return res.status(400).json({ errors: [{ param: "password", msg: "Please try to login with correct credentials" }] });
+            success = false
+            return res.status(400).json({ success, errors: [{ param: "password", msg: "Please try to login with correct credentials" }] });
 
         }
 
@@ -75,7 +79,8 @@ exports.login = async (req, res) => {
             }
         }
         const authToken = jwt.sign(data, JWT_SECRET);
-        res.json({ "authToken": authToken })
+        success = true
+        res.json({ success, authToken })
     } catch (error) {
         console.log(error.message);
         res.status(500).send("Internal Server Error");
