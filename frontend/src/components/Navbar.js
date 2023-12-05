@@ -12,7 +12,7 @@ function Navbar() {
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
       <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
         <Link to="/" className="flex items-center">
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">KourseLera</span>
+          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Ollege</span>
         </Link>
 
         <div className="flex w-full md:w-auto mt-4 md:mt-0">
